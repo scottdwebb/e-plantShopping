@@ -12,6 +12,9 @@ body {
 
 /* Navbar */
 .navbar {
+    position: sticky;
+    top: 0;
+    left: 0;
     background-color: #4CAF50;
     color: #fff!important;
     padding: 15px;
