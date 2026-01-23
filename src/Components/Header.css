@@ -1,0 +1,88 @@
+/* Sticky header container */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* Left | Center | Right */
+  align-items: center;
+  background-color: #316d33;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Left section: logo + text */
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.company-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.company-name {
+  font-weight: bold;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  text-transform: uppercase;
+}
+
+.tagline {
+  font-size: clamp(0.8rem, 1vw, 1rem);
+  color: #f8f8f8;
+}
+
+/* Center navigation */
+.header-nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: #f8f8f8;
+  font-size: clamp(0.9rem, 1vw, 1.1rem);
+  font-weight: 500;
+}
+
+.header-nav a:hover {
+  color: #e9d900;
+}
+
+/* Right section: cart */
+.header-right {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive: stack logo text on small screens */
+@media (max-width: 600px) {
+  .header {
+    grid-template-columns: 1fr auto 1fr;
+    padding: 8px 12px;
+  }
+
+  .header-nav {
+    gap: 15px;
+  }
+
+  .company-info {
+    display: none; /* Hide tagline & name if too small */
+  }
+}
